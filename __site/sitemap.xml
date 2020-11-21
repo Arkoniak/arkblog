@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+    <loc>https://testblog.arkoniak.com/menu2/index.html</loc>
+    <lastmod>2020-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://testblog.arkoniak.com/menu4/index.html</loc>
+    <lastmod>2020-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://testblog.arkoniak.com/menu1/index.html</loc>
+    <lastmod>2020-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://testblog.arkoniak.com/lemonde/puzzle1159/index.html</loc>
+    <lastmod>2020-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://testblog.arkoniak.com/pages/manual_union_splitting/index.html</loc>
+    <lastmod>2020-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://testblog.arkoniak.com/menu3/index.html</loc>
+    <lastmod>2020-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://testblog.arkoniak.com/index.html</loc>
+    <lastmod>2020-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://testblog.arkoniak.com/pages/page1/index.html</loc>
+    <lastmod>2020-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://testblog.arkoniak.com/menu0/index.html</loc>
+    <lastmod>2020-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+</urlset>

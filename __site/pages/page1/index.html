@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+   <link rel="stylesheet" href="/libs/katex/katex.min.css">
+     
    <link rel="stylesheet" href="/libs/highlight/github.min.css">
    
   <!-- <script src="/libs/dropdown.js"></script> -->
@@ -11,7 +12,7 @@
   <link rel="stylesheet" href="/css/poole_lanyon.css">
   <link rel="stylesheet" href="/css/adjust.css">
   <link rel="icon" href="/assets/favicon.png">
-   <title>More goodies</title>  
+   <title>Franklin Example</title>  
 </head>
 <body>
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
@@ -54,50 +55,56 @@ content to avoid any CSS collisions with our real content. -->
 
   <div class="container content">
 <!-- Content appended here -->
-<div class="franklin-content"><h1 id="more_goodies"><a href="#more_goodies">More goodies</a></h1>
-<h2 id="more_markdown_support"><a href="#more_markdown_support">More markdown support</a></h2>
-<p>The Julia Markdown parser in Julia&#39;s stdlib is not exactly complete and Franklin strives to bring useful extensions that are either defined in standard specs such as Common Mark or that just seem like useful extensions.</p>
-<ul>
-<li><p>indirect references for instance <a href="http://existentialcomics.com/">like so</a></p>
-</li>
-</ul>
-<p> or also for images</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Krul.svg" alt="some image"></p>
-<p>some people find that useful as it allows referring multiple times to the same link for instance.</p>
+<div class="franklin-content"><div class="franklin-toc"><ol><li><a href="#simulations">Simulations</a></li><li><a href="#inital_version">Inital version</a></li><li><a href="#tidying_up">Tidying up</a></li><li><a href="#optimization">Optimization</a><ol><li><a href="#optimizing_single_run">Optimizing single run</a></li><li><a href="#optimizing_whole_simulation">Optimizing whole simulation</a></li></ol></li><li><a href="#golden_section">Golden Section</a></li><li><a href="#results">Results</a></li></ol></div>
+<h1 id="simulations"><a href="#simulations">Simulations</a></h1>
+<h1 id="inital_version"><a href="#inital_version">Inital version</a></h1>
+<pre><code class="language-julia">using Statistics
 
-<ul>
-<li><p>un-qualified code blocks and indented code blocks are allowed and are julia by default</p>
-<p>a &#61; 1   b &#61; a&#43;1</p>
-</li>
-</ul>
-<p>or</p>
-<pre><code class="language-julia">a &#61; 1
-b &#61; a&#43;1</code></pre>
-<p>you can specify the default language with <code>@def lang &#61; &quot;julia&quot;</code>. If you actually want a &quot;plain&quot; code block, qualify it as <code>plaintext</code> like</p>
-<pre><code class="language-plaintext">so this is plain-text stuff.</code></pre>
-<h2 id="a_bit_more_highlighting"><a href="#a_bit_more_highlighting">A bit more highlighting</a></h2>
-<p>Extension of highlighting for <code>pkg</code> an <code>shell</code> mode in Julia:</p>
-<pre><code class="language-julia-repl">&#40;v1.4&#41; pkg&gt; add Franklin
-shell&gt; blah
-julia&gt; 1&#43;1
-&#40;Sandbox&#41; pkg&gt; resolve</code></pre>
-<p>you can tune the colouring in the CSS etc via the following classes:</p>
-<ul>
-<li><p><code>.hljs-meta</code> &#40;for <code>julia&gt;</code>&#41;</p>
-</li>
-<li><p><code>.hljs-metas</code> &#40;for <code>shell&gt;</code>&#41;</p>
-</li>
-<li><p><code>.hljs-metap</code> &#40;for <code>...pkg&gt;</code>&#41;</p>
-</li>
-</ul>
+struct Experiment
+    p::Float64
+    n::Int
+    theta::Float64
+end
+
+function run&#40;ex&#41;
+    val &#61; 1.0
+    for i in 1:ex.n
+        val *&#61; rand&#40;&#41; &lt; ex.p ? 1 &#43; ex.theta : 1 - ex.theta
+    end
+    
+    return val
+end</code></pre>
+<p>Now we can create and run our first experiment</p>
+<pre><code class="language-julia">julia&gt; ex &#61; Experiment&#40;0.55, 100, 0.05&#41;
+julia&gt; run&#40;ex&#41;
+0.5912653691771662</code></pre>
+<pre><code class="language-julia">function sim&#40;ex, N &#61; 10_000&#41;
+    res &#61; &#91;&#93;
+    for _ in 1:N
+        push&#33;&#40;res, run&#40;ex&#41;&#41;
+    end
+    
+    return quantile&#40;res, &#40;0.05, 0.5, 0.95&#41;&#41;
+end</code></pre>
+<h1 id="tidying_up"><a href="#tidying_up">Tidying up</a></h1>
+<h1 id="optimization"><a href="#optimization">Optimization</a></h1>
+<h2 id="optimizing_single_run"><a href="#optimizing_single_run">Optimizing single run</a></h2>
+<h2 id="optimizing_whole_simulation"><a href="#optimizing_whole_simulation">Optimizing whole simulation</a></h2>
+<h1 id="golden_section"><a href="#golden_section">Golden Section</a></h1>
+<h1 id="results"><a href="#results">Results</a></h1>
 <div class="page-foot">
   <div class="copyright">
-      &copy; Andrey Oskin. Published: 0001-01-01. Last modified: February 23, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.
+      &copy; Andrey Oskin. Published: 0001-01-01. Last modified: October 23, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.
   </div>
 </div>
 </div><!-- CONTENT ENDS HERE -->
       </div>  <!-- div: content container -->
     </div> <!-- wrap -->
+    
+        <script src="/libs/katex/katex.min.js"></script>
+<script src="/libs/katex/auto-render.min.js"></script>
+<script>renderMathInElement(document.body)</script>
+
     
     
         <script src="/libs/highlight/highlight.pack.js"></script>

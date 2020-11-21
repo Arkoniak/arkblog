@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {{if hasmath}} {{insert head_katex.html }}     {{end}}
   {{if hascode}} {{insert head_highlight.html }}   {{end}}
+  <!-- <script src="/libs/dropdown.js"></script> -->
   <link rel="stylesheet" href="/css/franklin.css">
   <link rel="stylesheet" href="/css/poole_lanyon.css">
   <link rel="stylesheet" href="/css/adjust.css">
@@ -20,10 +21,18 @@
     <p>A theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>.</p>
   </div>
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item {{ispage index.html}}active{{end}}" href="/">Home</a>
-    <a class="sidebar-nav-item {{ispage menu1/*}}active{{end}}" href="/menu1/">Code blocks</a>
-    <a class="sidebar-nav-item {{ispage menu2/*}}active{{end}}" href="/menu2/">Menu 2</a>
-    <a class="sidebar-nav-item {{ispage menu3/*}}active{{end}}" href="/menu3/">Menu 3</a>
+    <a class="sidebar-nav-item {{ispage pages/manual_union_splitting*}}active{{end}}" href="/pages/manual_union_splitting/">Manual Union-splitting</a>
+    <!-- <a class="sidebar-nav-item {{ispage index.html}}active{{end}}" href="/">Home</a> -->
+    <!-- <a class="sidebar-nav-item {{ispage menu1/*}}active{{end}}" href="/menu1/">Code blocks</a> -->
+    <!-- <a class="sidebar-nav-item {{ispage menu2/*}}active{{end}}" href="/menu2/">Menu 2</a> -->
+    <!-- <a class="sidebar-nav-item {{ispage menu3/*}}active{{end}}" href="/menu3/">Menu 3</a> -->
+    <!-- <a class="sidebar-nav-item {{ispage pages/page1*}}active{{end}}" href="/pages/page1/">Page 1</a> -->
+    <!-- <button class="dropdown-btn" "sidebar-nav-item">Pages -->
+    <!--     <i class="fa fa-caret-down">▼</i> -->
+    <!-- </button> -->
+    <!-- <div class="dropdown-container"> -->
+    <!--     <a class="sidebar-nav-item {{ispage pages/page1*}}active{{end}}" href="/pages/page1/">Page 1</a> -->
+    <!-- </div> -->
   </nav>
   <div class="sidebar-item">
     <p>&copy; {{fill author}}.</p>
@@ -36,8 +45,8 @@ content to avoid any CSS collisions with our real content. -->
   <div class="masthead">
     <div class="container">
       <h3 class="masthead-title">
-        <a href="/" title="Home">Lanyon</a>
-        <small>Description of your site</small>
+        <a href="/" title="Home">Arkoniak blog</a>
+        <small>  Random notes about everything</small>
       </h3>
     </div>
   </div>

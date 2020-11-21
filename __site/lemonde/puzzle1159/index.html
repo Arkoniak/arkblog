@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/css/poole_lanyon.css">
   <link rel="stylesheet" href="/css/adjust.css">
   <link rel="icon" href="/assets/favicon.png">
-   <title>More goodies</title>  
+   <title>Le Monde puzzle 1159</title>  
 </head>
 <body>
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
@@ -54,45 +54,61 @@ content to avoid any CSS collisions with our real content. -->
 
   <div class="container content">
 <!-- Content appended here -->
-<div class="franklin-content"><h1 id="more_goodies"><a href="#more_goodies">More goodies</a></h1>
-<h2 id="more_markdown_support"><a href="#more_markdown_support">More markdown support</a></h2>
-<p>The Julia Markdown parser in Julia&#39;s stdlib is not exactly complete and Franklin strives to bring useful extensions that are either defined in standard specs such as Common Mark or that just seem like useful extensions.</p>
-<ul>
-<li><p>indirect references for instance <a href="http://existentialcomics.com/">like so</a></p>
-</li>
-</ul>
-<p> or also for images</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Krul.svg" alt="some image"></p>
-<p>some people find that useful as it allows referring multiple times to the same link for instance.</p>
+<div class="franklin-content"><p>https://www.r-bloggers.com/2020/10/le-monde-puzzle-1159/</p>
+<pre><code class="language-julia">function testgroups&#40;n, partition&#41;
+    s1 &#61; 0
+    s2 &#61; 1
+    for i in 1:n
+        if partition &amp; 0x1 &#61;&#61; 0
+            s1 &#43;&#61; i
+        else
+            s2 *&#61; i
+        end
+        partition &#61; partition &gt;&gt; 1
+    end
 
-<ul>
-<li><p>un-qualified code blocks and indented code blocks are allowed and are julia by default</p>
-<p>a &#61; 1   b &#61; a&#43;1</p>
-</li>
-</ul>
-<p>or</p>
-<pre><code class="language-julia">a &#61; 1
-b &#61; a&#43;1</code></pre>
-<p>you can specify the default language with <code>@def lang &#61; &quot;julia&quot;</code>. If you actually want a &quot;plain&quot; code block, qualify it as <code>plaintext</code> like</p>
-<pre><code class="language-plaintext">so this is plain-text stuff.</code></pre>
-<h2 id="a_bit_more_highlighting"><a href="#a_bit_more_highlighting">A bit more highlighting</a></h2>
-<p>Extension of highlighting for <code>pkg</code> an <code>shell</code> mode in Julia:</p>
-<pre><code class="language-julia-repl">&#40;v1.4&#41; pkg&gt; add Franklin
-shell&gt; blah
-julia&gt; 1&#43;1
-&#40;Sandbox&#41; pkg&gt; resolve</code></pre>
-<p>you can tune the colouring in the CSS etc via the following classes:</p>
-<ul>
-<li><p><code>.hljs-meta</code> &#40;for <code>julia&gt;</code>&#41;</p>
-</li>
-<li><p><code>.hljs-metas</code> &#40;for <code>shell&gt;</code>&#41;</p>
-</li>
-<li><p><code>.hljs-metap</code> &#40;for <code>...pkg&gt;</code>&#41;</p>
-</li>
-</ul>
+    return s1 &#61;&#61; s2
+end
+
+function buildgroups&#40;n, partition&#41;
+    s1 &#61; 0
+    sump &#61; &#40;&#41;
+    prodp &#61; &#40;&#41;
+    for i in 1:n
+        if partition &amp; 0x1 &#61;&#61; 0
+            s1 &#43;&#61; i
+            sump &#61; tuple&#40;sump..., i&#41;
+        else
+            prodp &#61; tuple&#40;prodp..., i&#41;
+        end
+        partition &#61; partition &gt;&gt; 1
+    end
+
+    return &#40;result &#61; s1, sumpart &#61; sump, prodpart &#61; prodp&#41;
+end
+
+# testgroups&#40;5, UInt16&#40;11&#41;&#41;
+# buildgroups&#40;5, UInt16&#40;11&#41;&#41;
+
+function partitions&#40;n&#41;
+    p &#61; Progress&#40;2^n&#41;
+    for partition in 1:&#40;2^n - 1&#41;
+        next&#33;&#40;p&#41;
+        if testgroups&#40;n, partition&#41;
+            @info &quot;found: &quot; buildgroups&#40;n, partition&#41;
+        end
+    end
+end</code></pre>
+<pre><code class="language-julia">julia&gt; partitions&#40;10&#41;
+┌ Info: found:
+└   buildgroups&#40;n, partition&#41; &#61; &#40;result &#61; 42, sumpart &#61; &#40;4, 5, 6, 8, 9, 10&#41;, prodpart &#61; &#40;1, 2, 3 , 7&#41;&#41;
+┌ Info: found:
+└   buildgroups&#40;n, partition&#41; &#61; &#40;result &#61; 42, sumpart &#61; &#40;1, 2, 3, 4, 5, 8, 9, 10&#41;, prodpart &#61; &#40;6 , 7&#41;&#41;
+┌ Info: found:
+└   buildgroups&#40;n, partition&#41; &#61; &#40;result &#61; 40, sumpart &#61; &#40;2, 3, 5, 6, 7, 8, 9&#41;, prodpart &#61; &#40;1, 4, 10&#41;&#41;</code></pre>
 <div class="page-foot">
   <div class="copyright">
-      &copy; Andrey Oskin. Published: 0001-01-01. Last modified: February 23, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.
+      &copy; Andrey Oskin. Published: 0001-01-01. Last modified: October 09, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.
   </div>
 </div>
 </div><!-- CONTENT ENDS HERE -->
