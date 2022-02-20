@@ -50,15 +50,6 @@
 <body>
     {{ insert header.html}}
 
-<!-- <div class="wrap"> -->
-<!--   <div class="masthead"> -->
-<!--     <div class="container"> -->
-<!--       <h3 class="masthead-title"> -->
-<!--         <a href="/" title="Home">Arkoniak blog</a> -->
-<!--         <small>  Random notes about everything</small> -->
-<!--       </h3> -->
-<!--     </div> -->
-<!--   </div> -->
 <section class="section">
   <div class="container">
     <div class="row">
@@ -68,23 +59,16 @@
             <!-- {{ range .Params.categories }} -->
             <!-- <a class="post-meta" href="{{`categories/` | absURL}}{{. | lower | urlize}}/">{{.| humanize}}</a> -->
             <!-- {{ end }} -->
-            <h3 class="page-title">{{title}}</h3>
+            {{isdef title}}<h3 class="page-title">{{title}}</h3>{{end}}
             {{isdef published}} <span class="post-date"> {{fill published}} </span> {{end}}
           </div>
-          {{ifdef image_webp}}<img loading="lazy" class="img-fluid" src="{{image_webp}}" alt="{{title}}">{{end}}
+          {{ifdef image_webp}}<img loading="lazy" class="img-fluid" src="{{image_webp}}">{{end}}
           {{ifnotdef image_webp}}
-            {{ifdef image}}  
-          <img loading="lazy" class="img-fluid" src="{{image}}" alt="{{title}}">
-            {{ifnotdef image}}
-          <img loading="lazy" class="img-fluid" src="" alt="{{title}}">
-            {{end}}
+              {{ifdef image}}  
+                  <img loading="lazy" class="img-fluid" src="{{image}}">
+              {{end}}
           {{end}}
-        {{end}}
           <div class="card-body px-0">
             <div class="content text-left">
 
-<!-- <div class="franklin-content"> -->
-<!--   {{isdef title}} <h3 class="page-title"> {{fill title}} </h3> {{end}} -->
-<!--   {{isdef published}} <span class="post-date"> {{fill published}} </span> {{end}} -->
-<!-- </div> -->
 <!-- Content appended here -->

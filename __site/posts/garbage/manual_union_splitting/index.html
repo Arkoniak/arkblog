@@ -24,7 +24,7 @@
   <meta property="og:title" content="Manual Union-Splitting" > 
   
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://testblog.arkoniak.com/ WHAT TO USE INSTEAD of fd_rpath">
+  <meta property="og:url" content="https://blog.arkoniak.com/ WHAT TO USE INSTEAD of fd_rpath">
   <meta property="article:section" content="post">
   <!-- {{isdef published}}<meta property="article:published_time" content="{{fill published}}">{{end}} -->
   <!-- {{isnotdef published}}<meta property="article:published_time" content="{{fd_ctime}}">{{end}} -->
@@ -49,7 +49,7 @@
 <body>
     <header class="navbar">
   <nav class="navbar-container container">
-    <a class="navbar-brand" href="https://testblog.arkoniak.com/">
+    <a class="navbar-brand" href="https://blog.arkoniak.com/">
         
             <img class="img-fluid" width="100px" src="/assets/logo.png"
                                                           alt="Arkoniak land">
@@ -78,16 +78,6 @@
 </header>
 
 
-
-<!-- <div class="wrap"> -->
-<!--   <div class="masthead"> -->
-<!--     <div class="container"> -->
-<!--       <h3 class="masthead-title"> -->
-<!--         <a href="/" title="Home">Arkoniak blog</a> -->
-<!--         <small>  Random notes about everything</small> -->
-<!--       </h3> -->
-<!--     </div> -->
-<!--   </div> -->
 <section class="section">
   <div class="container">
     <div class="row">
@@ -102,15 +92,11 @@
           </div>
           
           
-            
-        
+              
+          
           <div class="card-body px-0">
             <div class="content text-left">
 
-<!-- <div class="franklin-content"> -->
-<!--   {{isdef title}} <h3 class="page-title"> {{fill title}} </h3> {{end}} -->
-<!--   {{isdef published}} <span class="post-date"> {{fill published}} </span> {{end}} -->
-<!-- </div> -->
 <!-- Content appended here -->
 <div class="franklin-content"><h1 id="manual_union-splitting"><a href="#manual_union-splitting" class="header-anchor">Manual Union-Splitting</a></h1>
 <p>Recently there was an interesting discussion on Julia <a href="https://julialang.zulipchat.com/#narrow/stream/225542-helpdesk/topic/Dispatching.20over.20an.20abstract.20iterable.3F">Zulip</a> regarding working with containers that contain elements of different types. The problem is that if the type of elements too broad, then Julia can&#39;t specialize and starts to allocate and perform badly. It can be solved by using the <a href="https://julialang.org/blog/2018/08/union-splitting/">manual union-splitting</a> technique.</p>
@@ -343,7 +329,7 @@ julia&gt; @btime g4&#40;&#36;v&#41;
 	<div class="container">
 		<div class="row">
 			<div class="col-12 text-center">
-				<a class="text-dark h3" href="https://testblog.arkoniak.com/">
+				<a class="text-dark h3" href="https://blog.arkoniak.com/">
                     
             <img class="img-fluid" width="100px" src="/assets/logo.png"
                                                           alt="Arkoniak land">

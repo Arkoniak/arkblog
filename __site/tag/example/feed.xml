@@ -11,12 +11,12 @@
     <title>
       <![CDATA[  Arkoniak land  ]]>
     </title>
-    <link> https://testblog.arkoniak.com/ </link>
+    <link> https://blog.arkoniak.com/ </link>
     <description>
       <![CDATA[  Random thoughts about Julia, life and everything  ]]>
     </description>
     <atom:link
-      href="https://testblog.arkoniak.com/feed.xml"
+      href="https://blog.arkoniak.com/feed.xml"
       rel="self"
       type="application/rss+xml" />
 
@@ -25,8 +25,8 @@
   <title>
     <![CDATA[  How to use Franklin  ]]>
   </title>
-  <link> https://testblog.arkoniak.com/posts/2022/02/19/example/index.html </link>
-  <guid> https://testblog.arkoniak.com/posts/2022/02/19/example/index.html </guid>
+  <link> https://blog.arkoniak.com/posts/2022/02/19/example/index.html </link>
+  <guid> https://blog.arkoniak.com/posts/2022/02/19/example/index.html </guid>
   <description>
     <![CDATA[  A summary of design tips and tricks.  ]]>
   </description>  

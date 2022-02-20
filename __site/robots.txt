@@ -1,4 +1,4 @@
-Sitemap: https://testblog.arkoniak.com/sitemap.xml
+Sitemap: https://blog.arkoniak.com/sitemap.xml
 
 User-agent: *
 Disallow:

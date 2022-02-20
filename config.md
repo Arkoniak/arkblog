@@ -6,7 +6,7 @@ The website_* must be defined for the RSS to work
 
 @def website_title = "Arkoniak land"
 @def website_descr = "Random thoughts about Julia, life and everything"
-@def website_url   = "https://testblog.arkoniak.com/"
+@def website_url   = "https://blog.arkoniak.com/"
 
 @def author = "Andrey Oskin"
 @def lang = "julia"
