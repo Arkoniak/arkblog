@@ -197,7 +197,7 @@ a:hover {
 }
 
 .section {
-  padding-top: 100px;
+  padding-top: 70px;
   padding-bottom: 100px;
 }
 .section-sm {
@@ -5797,6 +5797,10 @@ a.text-dark:focus {
   color: #000;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.card-header {
+  padding-top: 20px;
 }
 
 a.post-title:hover {

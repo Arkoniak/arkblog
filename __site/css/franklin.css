@@ -86,7 +86,9 @@ html {
 .franklin-content h3 { font-size: 20px; }
 
 .franklin-content h1, h2, h3, h4, h5, h6 {
-    text-align: left; }
+    text-align: left;
+    width: fit-content;
+}
 
 .franklin-content h1 {
     padding-bottom: 0.5em;

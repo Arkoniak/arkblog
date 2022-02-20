@@ -59,7 +59,11 @@
             <!-- {{ range .Params.categories }} -->
             <!-- <a class="post-meta" href="{{`categories/` | absURL}}{{. | lower | urlize}}/">{{.| humanize}}</a> -->
             <!-- {{ end }} -->
-            {{isdef title}}<h3 class="page-title">{{title}}</h3>{{end}}
+            {{isdef title}}
+                <h1 class="my-3">
+                    <a class="post-title" href="{{website_url}}">{{title}}</a>
+                </h1>
+            {{end}}
             {{isdef published}} <span class="post-date"> {{fill published}} </span> {{end}}
           </div>
           {{ifdef image_webp}}<img loading="lazy" class="img-fluid" src="{{image_webp}}">{{end}}

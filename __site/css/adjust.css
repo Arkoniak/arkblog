@@ -26,6 +26,34 @@ html {
     padding: 0.25em;
 }
 
+.franklin-toc {
+    /* background: #CEFFCE; */
+    border: 1px solid #006400;
+    background-color: #f8f8f8;
+    font-size: 110%;
+    padding: 15px;
+}
+
+.franklin-toc ol, li, ul, a {
+    margin-bottom: 0px !important;
+}
+
+.franklin-toc ol {
+    margin-bottom: 5px !important;
+}
+
+.franklin-toc a:hover {
+    text-decoration: none;
+    color: darkblue;
+}
+
+.header-anchor {
+    display: block;
+    /* height: 100px; */
+    padding-top: 80px;
+    margin-top: -80px;
+}
+
 .hljs {
     margin-bottom: 0px;
     font-size: 95%;
