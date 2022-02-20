@@ -8,6 +8,29 @@ html {
     padding-right: 0;
     line-height: 1.35em; }
 
+.franklin-content table.fndef tbody {
+    background: #f9f9f9;
+    border: 0;
+}
+
+.franklin-content table.fndef {
+    border: 0;
+}
+
+.franklin-content table.fndef th {
+    border: 0;
+}
+
+.franklin-content table.fndef td {
+    border: 0;
+    padding: 0.25em;
+}
+
+.hljs {
+    margin-bottom: 0px;
+    font-size: 95%;
+}
+
 /* on wide screens, fix content width to a max value */
 @media (min-width: 940px) {
     .franklin-content {

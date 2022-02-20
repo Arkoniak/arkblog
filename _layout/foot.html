@@ -1,12 +1,23 @@
 <!-- CONTENT ENDS HERE -->
-      </div>  <!-- div: content container -->
-    </div> <!-- wrap -->
-    {{ if hasmath }}
-        {{ insert foot_katex.html }}
-    {{ end }}
-    {{ if hascode }}
-        {{ insert foot_highlight.html }}
-    {{ end }}
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+            </div>
+        </article>
+<!-- <div class="page-foot"> -->
+<!--   <div class="copyright"> -->
+<!--       &copy; {{ fill author }}. Published: {{ date }}. Last modified: {{ fill fd_mtime }}. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>. -->
+<!--   </div> -->
+<!-- </div> -->
+
+        <!-- comments -->
+        <!-- {{ if .Site.DisqusShortname }} -->
+        <!-- <div class="mt-5"> -->
+        <!--   {{ template "_internal/disqus.html" . }} -->
+        <!-- </div> -->
+        <!-- {{ end }} -->
+      </div>
+    </div>
+  </div>
+</section>
+{{ insert footer.html }}
+{{ insert foot_scripts.html }}
   </body>
 </html>

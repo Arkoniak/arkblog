@@ -2,54 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{isdef title}}<title>{{fill title}}</title>  {{end}}
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  {{isdef rss}}<meta name="description" content="{{fill rss}}">{{end}}
+  {{isdef author}} <meta name="author" content="{{fill author}}"> {{end}}
+  {{isdef website_generator}}<meta name="generator" content="{{fill website_generator}}">{{end}}
+
   {{if hasmath}} {{insert head_katex.html }}     {{end}}
   {{if hascode}} {{insert head_highlight.html }}   {{end}}
-  <!-- <script src="/libs/dropdown.js"></script> -->
+  <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/franklin.css">
-  <link rel="stylesheet" href="/css/poole_lanyon.css">
   <link rel="stylesheet" href="/css/adjust.css">
-  <link rel="icon" href="/assets/favicon.png">
-  {{isdef title}} <title>{{fill title}}</title>  {{end}}
+
+  <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
+
+  {{isdef image}}<meta property="og:image" content="{{website_url}}{{fill image}}" > {{end}}
+  {{isdef title}}<meta property="og:title" content="{{fill title}}" > {{end}}
+  {{isdef description}}<meta property="og:description" content="{{fill description}}" > {{end}}
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{website_url}} WHAT TO USE INSTEAD of fd_rpath">
+  <meta property="article:section" content="post">
+  <!-- {{isdef published}}<meta property="article:published_time" content="{{fill published}}">{{end}} -->
+  <!-- {{isnotdef published}}<meta property="article:published_time" content="{{fd_ctime}}">{{end}} -->
+  <meta property="article:published_time" content="{{date}}T00:00:00">
+  {{isdef modified_time}}<meta property="article:modified_time" content="{{fill modified_time}}">{{end}}
+  {{isnotdef modified_time}}
+      {{ifdef published}}<meta property="article:modified_time" content="{{published}}">{{end}}
+      {{ifnotdef published}}<meta property="article:modified_time" content="{{date}}T00:00:00">{{end}}
+  {{end}}
+
+  {{isdef tags}}
+      {{for tag in tags}}
+        <meta property="article:tag" content="{{fill tag}}">
+      {{end}}
+  {{end}}
+  <meta property="article:author" content="https://twitter.com/AndrejOskin">
+  <meta property="profile:first_name" content="Andrey">
+  <meta property="profile:last_name" content="Oskin">
+
+  {{isdef title}}<meta name="twitter:title" content="{{fill title}}" />{{end}}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@AndrejOskin"/>
 </head>
 <body>
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+    {{ insert header.html}}
 
-<!-- Toggleable sidebar -->
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    <p>A theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>.</p>
-  </div>
-  <nav class="sidebar-nav">
-    <a class="sidebar-nav-item {{ispage pages/manual_union_splitting*}}active{{end}}" href="/pages/manual_union_splitting/">Manual Union-splitting</a>
-    <!-- <a class="sidebar-nav-item {{ispage index.html}}active{{end}}" href="/">Home</a> -->
-    <!-- <a class="sidebar-nav-item {{ispage menu1/*}}active{{end}}" href="/menu1/">Code blocks</a> -->
-    <!-- <a class="sidebar-nav-item {{ispage menu2/*}}active{{end}}" href="/menu2/">Menu 2</a> -->
-    <!-- <a class="sidebar-nav-item {{ispage menu3/*}}active{{end}}" href="/menu3/">Menu 3</a> -->
-    <!-- <a class="sidebar-nav-item {{ispage pages/page1*}}active{{end}}" href="/pages/page1/">Page 1</a> -->
-    <!-- <button class="dropdown-btn" "sidebar-nav-item">Pages -->
-    <!--     <i class="fa fa-caret-down">▼</i> -->
-    <!-- </button> -->
-    <!-- <div class="dropdown-container"> -->
-    <!--     <a class="sidebar-nav-item {{ispage pages/page1*}}active{{end}}" href="/pages/page1/">Page 1</a> -->
-    <!-- </div> -->
-  </nav>
-  <div class="sidebar-item">
-    <p>&copy; {{fill author}}.</p>
-  </div>
-</div>
+<!-- <div class="wrap"> -->
+<!--   <div class="masthead"> -->
+<!--     <div class="container"> -->
+<!--       <h3 class="masthead-title"> -->
+<!--         <a href="/" title="Home">Arkoniak blog</a> -->
+<!--         <small>  Random notes about everything</small> -->
+<!--       </h3> -->
+<!--     </div> -->
+<!--   </div> -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <article class="card text-center post-card mb-4">
+          <div class="card-header bg-transparent border-0">
+            <!-- {{ range .Params.categories }} -->
+            <!-- <a class="post-meta" href="{{`categories/` | absURL}}{{. | lower | urlize}}/">{{.| humanize}}</a> -->
+            <!-- {{ end }} -->
+            <h3 class="page-title">{{title}}</h3>
+            {{isdef published}} <span class="post-date"> {{fill published}} </span> {{end}}
+          </div>
+          {{ifdef image_webp}}<img loading="lazy" class="img-fluid" src="{{image_webp}}" alt="{{title}}">{{end}}
+          {{ifnotdef image_webp}}
+            {{ifdef image}}  
+          <img loading="lazy" class="img-fluid" src="{{image}}" alt="{{title}}">
+            {{ifnotdef image}}
+          <img loading="lazy" class="img-fluid" src="" alt="{{title}}">
+            {{end}}
+          {{end}}
+        {{end}}
+          <div class="card-body px-0">
+            <div class="content text-left">
 
-<!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-content to avoid any CSS collisions with our real content. -->
-<div class="wrap">
-  <div class="masthead">
-    <div class="container">
-      <h3 class="masthead-title">
-        <a href="/" title="Home">Arkoniak blog</a>
-        <small>  Random notes about everything</small>
-      </h3>
-    </div>
-  </div>
-
-  <div class="container content">
+<!-- <div class="franklin-content"> -->
+<!--   {{isdef title}} <h3 class="page-title"> {{fill title}} </h3> {{end}} -->
+<!--   {{isdef published}} <span class="post-date"> {{fill published}} </span> {{end}} -->
+<!-- </div> -->
 <!-- Content appended here -->

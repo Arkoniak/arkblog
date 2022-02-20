@@ -1,0 +1,28 @@
+<header class="navbar">
+  <nav class="navbar-container container">
+    <a class="navbar-brand" href="{{website_url}}">
+        {{ifdef logo}}
+            <img class="img-fluid" width="{{logo_width}}" src="{{logo}}"
+                                                          alt="{{website_title}}">
+        {{end}}
+        {{ifndef logo}}
+            {{website_title}}
+        {{end}}
+    </a>
+    <!-- <button type="button" class="navbar-toggle" aria-label="Open navigation menu"> -->
+    <!--   <span class="icon-bar"></span> -->
+    <!--   <span class="icon-bar"></span> -->
+    <!--   <span class="icon-bar"></span> -->
+    <!-- </button> -->
+    <div class="navbar-menu">
+      <ul class="navbar-links">
+          {{for (menu, url) in menus}}
+        <li class="navbar-item">
+            <a class="navbar-link" href="{{url}}">{{ menu }}</a>
+        </li>
+          {{end}}
+      </ul>
+    </div>
+  </nav>
+</header>
+

@@ -11,6 +11,15 @@ The website_* must be defined for the RSS to work
 @def author = "Andrey Oskin"
 @def lang = "julia"
 @def date_format = "U dd, yyyy"
+@def website_generator = "Franklin 0.10.69"
+
+@def hasmath = false
+@def hascode = true
+
+@def logo = "/assets/logo.png"
+@def logo_width = "100px"
+
+@def menus = [("About", "/about"), ("Blog", "/")]
 
 <!-- ---------------------------------------------------
 Add here global latex commands to use throughout your
