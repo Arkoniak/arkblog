@@ -59,6 +59,10 @@ html {
     font-size: 95%;
 }
 
+footer div {
+    background-color: whitesmoke;
+}
+
 /* on wide screens, fix content width to a max value */
 @media (min-width: 940px) {
     .franklin-content {

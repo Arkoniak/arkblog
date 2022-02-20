@@ -17,7 +17,7 @@ The website_* must be defined for the RSS to work
 @def hascode = true
 
 @def logo = "/assets/logo.png"
-@def logo_width = "100px"
+@def logo_width = "80px"
 
 @def menus = [("About", "/about"), ("Blog", "/")]
 
