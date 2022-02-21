@@ -193,3 +193,5 @@ Last modified: {{ fill fd_mtime }}.
 This dictionary of variables is accessed locally by pages through `@def varname = value` and globally through the `config.md` page via the same syntax.
 
 There's a few other such functions of the form `{{fname p₁ p₂}}` as well as support for conditional blocks. If you wander through the `src/_html_parts/` folder and its content, you should be able to see those in action.
+
+XXX
