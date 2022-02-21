@@ -27,9 +27,9 @@ jobs:
 
     - name: Install dependencies
       uses: julia-actions/julia-buildpkg@master
-      run: julia --project -e '
-        using Franklin;
-        optimize(minify=false, prerender=false);'
+    - run: julia --project -e '
+          using Franklin;
+          optimize(minify=false, prerender=false);'
   
     - name: Set preview prepath
       # if this build is a PR build and the PR is NOT from a fork
