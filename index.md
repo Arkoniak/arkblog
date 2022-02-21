@@ -1,7 +1,5 @@
 +++
-title = "Home"
+title = "Posts"
 +++
-
-# Posts
 
 {{blogposts}}
