@@ -1,0 +1,101 @@
+html {
+    font-size: 17px;
+}
+
+.franklin-content {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    line-height: 1.35em; }
+
+.franklin-content table.fndef tbody {
+    background: #f9f9f9;
+    border: 0;
+}
+
+.franklin-content table.fndef {
+    border: 0;
+}
+
+.franklin-content table.fndef th {
+    border: 0;
+}
+
+.franklin-content table.fndef td {
+    border: 0;
+    padding: 0.25em;
+}
+
+.franklin-toc {
+    /* background: #CEFFCE; */
+    border: 1px solid #006400;
+    background-color: #f8f8f8;
+    font-size: 110%;
+    padding: 15px;
+}
+
+.franklin-toc ol, li, ul, a {
+    margin-bottom: 0px !important;
+}
+
+.franklin-toc ol {
+    margin-bottom: 5px !important;
+}
+
+.franklin-toc a:hover {
+    text-decoration: none;
+    color: darkblue;
+}
+
+.header-anchor {
+    display: block;
+    /* height: 100px; */
+    padding-top: 80px;
+    margin-top: -80px;
+}
+
+code {
+    background: #EAEFFF;
+    color: #291D14;
+}
+
+.hljs {
+    margin-bottom: 0px;
+    font-size: 95%;
+}
+
+footer div {
+    background-color: whitesmoke;
+}
+
+.nobull {
+    list-style-type: none;
+}
+
+.nobull li::before {
+    position: relative !important;
+}
+
+.posts-list li {
+    border-left: 5px solid #B3AE98;
+    margin-bottom: 30px !important;
+}
+
+a:hover {
+    color: #646464 !important;
+}
+
+/* on wide screens, fix content width to a max value */
+@media (min-width: 940px) {
+    .franklin-content {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto; }
+    }
+
+/* on narrow device, reduce margins */
+@media (max-width: 768px) {
+    .franklin-content {
+        padding-left: 6%;
+        padding-right: 6%; }
+    }
