@@ -1,4 +1,7 @@
 +++
-title = "Index"
+title = "Home"
 +++
-[Example](posts/2022/02/19/example/)
+
+# Posts
+
+{{blogposts}}

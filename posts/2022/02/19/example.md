@@ -1,12 +1,11 @@
 +++
 title = "How to use Franklin"
 hasmath = true
-published = "2022-02-20T12:00:00"
+published = "2022-02-19"
 rss = "A summary of design tips and tricks."
 description = "A summary of design tips and tricks."
 image = "/assets/rndimg.jpg"
 tags = ["julia", "example"]
-date = "2022-01-01"
 +++
 <!-- Note: by default hasmath == true and hascode == false. You can change this in
 the config file by setting hasmath = false for instance and just setting it to true

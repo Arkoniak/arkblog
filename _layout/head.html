@@ -18,6 +18,7 @@
 
   <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
   <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
+  <link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="RSS Feed for Andrey Oskin blog">
 
   {{isdef image}}<meta property="og:image" content="{{website_url}}{{fill image}}" > {{end}}
   {{isdef title}}<meta property="og:title" content="{{fill title}}" > {{end}}
@@ -25,10 +26,9 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="{{fd_full_url}}">
   <meta property="article:section" content="post">
-  <!-- {{isdef published}}<meta property="article:published_time" content="{{fill published}}">{{end}} -->
+  {{isdef published}}<meta property="article:published_time" content="{{dateformat published yyyy-mm-ddTHH:MM:SS}}">{{end}}
   <!-- {{isnotdef published}}<meta property="article:published_time" content="{{fd_ctime}}">{{end}} -->
-  <meta property="article:published_time" content="{{date}}T00:00:00">
-  {{isdef modified_time}}<meta property="article:modified_time" content="{{fill modified_time}}">{{end}}
+  {{isdef modified_time}}<meta property="article:modified_time" content="{{modified_time}}">{{end}}
   {{isnotdef modified_time}}
       {{ifdef published}}<meta property="article:modified_time" content="{{published}}">{{end}}
       {{ifnotdef published}}<meta property="article:modified_time" content="{{date}}T00:00:00">{{end}}
@@ -64,7 +64,7 @@
                     <a class="post-title" href="{{website_url}}">{{title}}</a>
                 </h1>
             {{end}}
-            {{isdef published}} <span class="post-date"> {{fill published}} </span> {{end}}
+            {{isdef published}} <span class="post-date"> {{dateformat published U+dd,+yyyy}} </span> {{end}}
           </div>
           {{ifdef image_webp}}<img loading="lazy" class="img-fluid" src="{{image_webp}}">{{end}}
           {{ifnotdef image_webp}}
